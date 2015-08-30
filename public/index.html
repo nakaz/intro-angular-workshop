@@ -44,8 +44,9 @@
         </li>
       </ul>
 
-    <h3>LIST OF BASEBALL MOVIESSSS</h3>
-    <ul ng-repeat="movie in movies | filter:year=1983">
+    <input type="text" ng-model="moviefilter" name="moviefilter" placeholder="enter year">
+    <h3>LIST OF BASEBALL MOVIESSSS in {{moviefilter}}</h3>
+    <ul ng-repeat="movie in movies | filter: {year: moviefilter}">
       <li>{{ movie.title }}</li>
     </ul>
 
@@ -62,6 +63,7 @@
     <script type="text/javascript" src='/js/factories.js'></script>
     <script type="text/javascript" src='/js/services.js'></script>
     <script type="text/javascript" src='/js/providers.js'></script>
+    <script type="text/javascript" src='/js/filters.js'></script>
     <script type="text/javascript" src='/js/myController.controller.js'></script>
   </body>
 </html>
