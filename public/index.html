@@ -52,7 +52,7 @@
 
     <input type="text" ng-model="moviefilter2" name="moviefilter" placeholder="enter year">
     <h3>List of Baseball Movies -- with the filter function</h3>
-    <ul ng-repeat="movie in movies | beforeYearFilter:moviefilter2">
+    <ul ng-repeat="movie in movies | beforeYearFilter:moviefilter2 | orderBy: '-year'">
       <li><h4>{{ movie.title }}</h4><p>{{ movie.year }}</p></li>
     </ul>
 
