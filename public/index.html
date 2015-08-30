@@ -47,7 +47,13 @@
     <input type="text" ng-model="moviefilter" name="moviefilter" placeholder="enter year">
     <h3>LIST OF BASEBALL MOVIESSSS in {{moviefilter}}</h3>
     <ul ng-repeat="movie in movies | filter: {year: moviefilter}">
-      <li>{{ movie.title }}</li>
+      <li><h4>{{ movie.title }}</h4><p>{{ movie.year }}</p></li>
+    </ul>
+
+    <input type="text" ng-model="moviefilter2" name="moviefilter" placeholder="enter year">
+    <h3>List of Baseball Movies -- with the filter function</h3>
+    <ul ng-repeat="movie in movies | beforeYearFilter:moviefilter2">
+      <li><h4>{{ movie.title }}</h4><p>{{ movie.year }}</p></li>
     </ul>
 
     </div>
