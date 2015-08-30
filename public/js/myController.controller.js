@@ -6,7 +6,7 @@
       $scope.name = 'Sean';
       $scope.title = myAppTitle;
       $scope.characters = CharacterVersionFactory;
-      $scope.book = BookService.getBook(1);
+      $scope.favbook = BookService.getBook(1);
       $scope.books = BookService.getBooks();
     }
 })();

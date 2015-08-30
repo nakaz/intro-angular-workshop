@@ -14,11 +14,29 @@
       <input type="text" ng-model="name" placeholder="Enter Name">
 
       <p>{{ name }}</p>
+
+      <!-- no need deez buggahs no moah! -->
       {{ characters }}
 
-      {{ book }}
+      {{ favbook }} <!-- does not work without .key since we changed to object -->
 
       {{ books }}
+
+      <h3>My Favorite book is {{favbook.title}}</h3>
+
+      <h3>CHARACTERS</h3>
+      <ul ng-repeat="character in characters">
+        <li>{{ character }}</li>
+      </ul>
+
+      <h3> LIST OF BOOKS </h3>
+      <ul ng-repeat="book in books">
+        <li>
+          <h4>{{book.title}}</h4>
+          <p>{{book.author}}</p>
+        </li>
+      </ul>
+
     </div>
     <footer>
       <small>Version {{ APP_VERSION }}</small>
