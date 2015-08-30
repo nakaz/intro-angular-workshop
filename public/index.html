@@ -2,62 +2,14 @@
   <head>
     <title>Angular Intro</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.min.js"></script>
   </head>
 
   <body ng-app='myApp'>
-    <h1>{{ "Hello" + "Angular!" }}</h1>
 
-    <p>{{ 2 + 3 }}</p>
-
-    <div ng-controller="myController">
-      <h1> {{ title }} </h1>
-      <input type="text" ng-model="name" placeholder="Enter Name">
-
-      <p>{{ name }}</p>
-
-      <!-- no need deez buggahs no moah! -->
-      {{ characters }}
-
-      {{ favbook }} <!-- does not work without .key since we changed to object -->
-
-      {{ books }}
-
-      <h3>My Favorite book is {{favbook.title}}</h3>
-
-      <h3>CHARACTERS</h3>
-      <ul ng-repeat="character in characters">
-        <li>{{ character }}</li>
-      </ul>
-
-      <input type="text" ng-model="booktitle" name="title" placeholder="title">
-      <input type="text" ng-model="author" name="author" placeholder="author">
-      <button type="button" ng-click="addbook(booktitle, author)">Add a new Book!</button>
-
-
-      <h3> LIST OF BOOKS </h3>
-      <ul ng-repeat="book in books">
-        <li>
-          <h4>{{book.title}}</h4>
-          <p>{{book.author}}</p>
-        </li>
-      </ul>
-
-    <input type="text" ng-model="moviefilter" name="moviefilter" placeholder="enter year">
-    <h3>LIST OF BASEBALL MOVIESSSS in {{moviefilter}}</h3>
-    <ul ng-repeat="movie in movies | filter: {year: moviefilter}">
-      <li><h4>{{ movie.title }}</h4><p>{{ movie.year }}</p></li>
-    </ul>
-
-    <input type="text" ng-model="moviefilter2" name="moviefilter" placeholder="enter year">
-    <h3>List of Baseball Movies -- with the filter function</h3>
-    <ul ng-repeat="movie in movies | beforeYearFilter:moviefilter2 | orderBy: '-year'">
-      <li><h4>{{ movie.title }}</h4><p>{{ movie.year }}</p></li>
-    </ul>
-
-    </div>
-
+    <div ng-view></div>
 
     <footer>
       <small>Version {{ APP_VERSION }}</small>
@@ -71,5 +23,6 @@
     <script type="text/javascript" src='/js/providers.js'></script>
     <script type="text/javascript" src='/js/filters.js'></script>
     <script type="text/javascript" src='/js/myController.controller.js'></script>
+
   </body>
 </html>
