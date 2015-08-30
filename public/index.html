@@ -29,6 +29,11 @@
         <li>{{ character }}</li>
       </ul>
 
+      <input type="text" ng-model="booktitle" name="title" placeholder="title">
+      <input type="text" ng-model="author" name="author" placeholder="author">
+      <button type="button" ng-click="addbook(booktitle, author)">Add a new Book!</button>
+
+
       <h3> LIST OF BOOKS </h3>
       <ul ng-repeat="book in books">
         <li>

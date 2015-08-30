@@ -8,5 +8,6 @@
       $scope.characters = CharacterVersionFactory;
       $scope.favbook = BookService.getBook(1);
       $scope.books = BookService.getBooks();
+      $scope.addbook = BookService.addBook;
     }
 })();
