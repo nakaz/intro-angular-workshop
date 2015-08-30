@@ -3,10 +3,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
 </head>
 
-<body ng-app>
+<body ng-app='myApp'>
   <h1>{{ "Hello" + "Angular!" }}</h1>
 
-  <div>
-    {{ 2 + 3 }}
+  <p>{{ 2 + 3 }}</p>
+
+  <div ng-controller="myController">
+    <input type="text" ng-model="name" placeholder="Enter Name">
+
+    <p>{{ name }}</p>
+
   </div>
+
+
+  <script type="text/javascript" src='/js/main.js'></script>
 </body>
