@@ -9,7 +9,7 @@
       myController
     ]);
 
-    function myController ($scope, myAppTitle, CharacterVersionFactory, BookService, Movies) {
+    function myController ($scope, myAppTitle, CharacterVersionFactory) {
       $scope.name = 'Sean';
       $scope.title = myAppTitle;
       $scope.characters = CharacterVersionFactory;

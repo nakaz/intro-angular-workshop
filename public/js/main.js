@@ -2,7 +2,7 @@
   var app = angular.module('myApp', ['ngResource', 'ngRoute']);
 
   //routes
-  app.config(['$routeProvider', function ($routeProvider) {
+  app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/books', {
         templateUrl: 'views/books.html',
@@ -21,8 +21,9 @@
         controller: 'myController'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/other'
       });
+    $locationProvider.html5Mode({enabled:true, requireBase:false});
   }]);
 
   //runs after app is loaded
