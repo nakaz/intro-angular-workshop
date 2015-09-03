@@ -4,10 +4,10 @@
   //routes
   app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      // .when('/books', {
-      //   templateUrl: 'views/books.html',
-      //   controller: 'BooksController'
-      // })
+      .when('#/books', {
+        templateUrl: 'views/books.html',
+        controller: 'BooksController'
+      })
       // .when('/movies', {
       //   templateUrl: 'views/movies.html',
       //   controller: 'MoviesController'
@@ -20,6 +20,9 @@
         templateUrl: 'views/default.html',
         controller: 'myController'
       });
+      // .otherwise({
+      //   redirectTo: '/'
+      // });
   }]);
 
   //runs after app is loaded

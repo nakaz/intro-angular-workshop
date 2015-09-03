@@ -1,0 +1,25 @@
+{{ characters }}
+
+{{ favbook }} <!-- does not work without .key since we changed to object -->
+
+{{ books }}
+
+<h3>My Favorite book is {{favbook.title}}</h3>
+
+<h3>CHARACTERS</h3>
+<ul ng-repeat="character in characters">
+  <li>{{ character }}</li>
+</ul>
+
+<input type="text" ng-model="booktitle" name="title" placeholder="title">
+<input type="text" ng-model="author" name="author" placeholder="author">
+<button type="button" ng-click="addbook(booktitle, author)">Add a new Book!</button>
+
+
+<h3> LIST OF BOOKS </h3>
+<ul ng-repeat="book in books">
+  <li>
+    <h4>{{book.title}}</h4>
+    <p>{{book.author}}</p>
+  </li>
+</ul>
